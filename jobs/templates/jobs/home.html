@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+    
+
+    <title>Amala Richu A</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/album/">
+
+    <!-- Bootstrap core CSS -->
+    <!-- CSS only -->
+    <link rel = "stylesheet", 
+    href="{% static 'css/main.css' %}">
+      
+    <link rel = "stylesheet", 
+    href="{% static 'css/bootstrap.min.css' %}" >
+  
+  </head>
+
+
+
+  <body>
+    <main role="main">
+      <section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">Hello, a bit about me :)</h1>
+           <img src="{% static 'A.jfif' %}" width="200" height="200"> </img>
+          <p class="lead text-muted">Hi my name is Amala Richu A, and I am a Masters qualified Data Science Professional and welcome to my digital Portfolio. This website developed using Django and Python depicts all of the work I had completed throught he years. I enjoy making website and apps and my comfortable language is Python and SQL. Walk-through some the exciting projects of mine.</p>
+          <p>
+            <a href="https://www.linkedin.com/in/amala-richu-0b4a59128/" class="btn btn-primary my-2">Connect with me on LinkedIn</a>
+            
+          </p>
+
+         
+        </div>
+      </section>
+
+
+      <section class="album py-5 bg-light">
+
+      <center><h1 class="jumbotron-heading" style=" padding-top: 2%;padding-bottom: 2%">Education</h1></center>
+
+        <div class="container">
+<center>
+        <div class="timeline-item">
+        <div class="timeline-img"></div>
+
+        <div class="timeline-content js--fadeInLeft">
+        <h4>Master of Data Science </h4>
+        
+       
+        <h4>Monash University , Australia </h4>
+        <h5>JUL 2014 - MAY 2018</h5>
+        <p>Key learning areas included:  Data Analysis, Big Data Technologies.
+With WAM 72.8% passed with a Distinction.</p>
+      
+        </div>
+        </div> 
+</center>
+  <center>
+        <div class="timeline-item">
+        <div class="timeline-img"></div>
+        <div class="timeline-content js--fadeInRight">
+        <h4> Bachelor of Information Technology</h4>
+       
+         <h4>Thiagarajar College of Engineering , India </h4>
+          <h5>JUL 2014 - MAY 2018</h5>
+        <p>Special interest in the Internet of Things and Mobile Technology.
+With GPA 89.5%, passed with a First-Class Distinction.
+</p>
+       
+      </div>
+      </div>   
+</center>
+    </section>
+<br>
+
+      <div class="album py-5 bg-light">
+        <div class="container">
+<center><h1 class="jumbotron-heading" style=" padding-top: 2%;padding-bottom: 2%">Projects</h1></center>
+          <div class="row">
+          {% for i in jobs.all %}
+
+            <div class="col-md-4">
+              <a href="{% url 'detail' i.id %}"> <!-- because detail render is passed with a job id--->
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="{{i.image.url}}"  style=" width:100%;
+    height: 230px;">
+                <div class="card-body">
+                  <p class="card-text">{{i.summary}}</p>
+                  
+                </div>
+              </div>
+            </a>
+            </div>      
+            {% endfor%}
+
+          </div> <!--row for-->
+        </div>
+      </div>
+
+<br>
+
+      <div class="album py-5 bg-light">
+        <div class="container">
+<center><h1 class="jumbotron-heading" style=" padding-top: 2%;padding-bottom: 2%">Recommendations </h1></center>
+          <div class="row">
+          {% for i in jobs.all %}
+
+            <div class="col-md-4">
+              <a href="{% url 'detail' i.id %}"> <!-- because detail render is passed with a job id--->
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="{{i.image.url}}"  style=" width:100%;
+    height: 230px;">
+                <div class="card-body">
+                  <p class="card-text">{{i.summary}}</p>
+                  
+                </div>
+              </div>
+            </a>
+            </div>      
+            {% endfor%}
+
+          </div> <!--row for-->
+        </div>
+      </div>
+    </main>
+
+    <footer class="text-muted">
+      <div class="container">
+       <br>
+        <p>Copyright © 2021 Amala Richu | Powered by Amala Richu</p>
+       
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+   <!-- JavaScript Bundle with Popper -->
+ 
+    <script src="{% static 'jquery-3.6.0.min' %}"></script>
+    <script src="{% static 'popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}">
+    </script>
+    
+    </body>
+    </html>
+
